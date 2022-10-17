@@ -1,0 +1,8 @@
+$error_color: #ff0000 !default;
+$text_color: #ddd;
+
+.alert-error {
+    background-color: $error_color;
+    color: $text_color;
+    text-shadow: 0 0 2px darken($text_color, 40%);
+}
