@@ -1,14 +1,13 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
 	entry: './src/client/ts/index.ts', // file used as entry point
-
 	module: {
 		rules: [
 			{
-				test: /\.(ts|tsx)$/i,
+				test: /\.ts$/i,
 				loader: 'ts-loader',
 				exclude: ['/node_modules/']
 			},
@@ -18,17 +17,17 @@ module.exports = {
 				type: 'asset'
 			},
 			{
-				test: /\.(glsl|glb|vs|fs|vert|frag)$/,
-				type: 'asset/resource',
+				test: /\.(glsl|glb|vs|fs|vert|frag)$/i,
 				exclude: ['/node_modules/'],
+				type: 'asset/resource',
 				// type: 'asset/source',
 				use: [
 					'raw-loader',
+					'glslify-loader',
 					{
-						loader: 'glslify-loader',
 						options: {
-							transform: [['glslify-hex'], ['glslify-import']]
-							// basedir: '../glsl/'
+							transform: [['glslify-hex'], ['glslify-import']],
+							basedir: './src'
 						}
 					}
 				]
@@ -73,4 +72,4 @@ module.exports = {
 			}
 		})
 	]
-};
+}
