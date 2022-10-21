@@ -23,7 +23,7 @@
         <meta name="twitter:image" content="" />
     </head>
     <body>
-        <!-- <div class="container-wrapper">
+        <div class="container-wrapper">
             <div class="loading">
                 <div class="loading-logo">logo</div>
             </div>
@@ -39,21 +39,7 @@
             <footer class="footer">
                 <div>COPYRIGHT © 2022 SAM, LTD. ALL RIGHTS RESERVED.</div>
             </footer>
-        </div> -->
-        <script src="../ts/index.ts" type="script">
-
-            if ("serviceWorker" in navigator) {
-                window.addEventListener("load", () => {
-                    navigator.serviceWorker
-                        .register("service-worker.js")
-                        .then((registration) => {
-                            console.log("Service Worker registered: ", registration);
-                        })
-                        .catch((registrationError) => {
-                            console.error("Service Worker registration failed: ", registrationError);
-                        });
-                });
-            }
-        </script>
+        </div>
+        <script src="../ts/index.ts" type="module"></script>
     </body>
 </html>

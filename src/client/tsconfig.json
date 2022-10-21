@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"sourceMap": true,
+		"allowSyntheticDefaultImports": true,
+		"target": "es5",
+		"module": "es6",
+		"moduleResolution": "node",
+		"lib": ["DOM", "ES2017"],
+		"noImplicitAny": true,
+		"allowJs": true,
+		"typeRoots": ["node_modules/@types"]
+	},
+	"include": ["**/*.ts"]
+	// "exclude": ["node_modules"]
+}
