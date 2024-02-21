@@ -15,7 +15,7 @@ void main() {
     // float normalizedMouseY = u_mouse.y / u_resolution.y;
     
     // using mousemove to change the color 
-    // vec3 color = vec3(u_mouse.x , 0.0, u_mouse.y);
+    vec3 color = vec3(u_mouse.x /u_mouse.x  , u_mouse.x / u_mouse.y, u_mouse.y);
 
     // using time to change the color
     // vec3 color = vec3((sin(u_time) +1.0)/ 2.0, (cos(u_time)),(cos(u_time)+ 1.0/2.0));
@@ -27,8 +27,7 @@ void main() {
     // vec3 cl2 = vec3(0.0,0.2,0.25);
     // vec3 color = mix(cl1, cl2, uv.y);
 
-    //varying 
-    vec3 color = vec3(v_uv.x, v_uv.y, 0.0);
+ 
 
     gl_FragColor = vec4(color, 1.0);
 

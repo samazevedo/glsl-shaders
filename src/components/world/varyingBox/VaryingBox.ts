@@ -1,12 +1,11 @@
 import * as THREE from 'three'
-import { IApp } from '../../types/interfaces'
+import { IApp } from '../../../types/interfaces'
 import vertex from './box.vert'
 import fragment from './box.frag'
 
-export default class Box {
+export default class VaryngBox {
 	private mesh: THREE.Mesh
-
-	private geometry: THREE.OctahedronGeometry
+	private geometry: THREE.BoxGeometry
 	private material: THREE.ShaderMaterial
 
 	private clock: THREE.Clock
@@ -24,13 +23,14 @@ export default class Box {
 
 		this.clock = new THREE.Clock()
 
-		this.geometry = new THREE.OctahedronGeometry(1, 0)
+		this.geometry = new THREE.BoxGeometry(2, 2, 2)
 		this.material = new THREE.ShaderMaterial({
 			uniforms: uniforms,
 			vertexShader: vertex,
 			fragmentShader: fragment,
 		})
 		this.mesh = new THREE.Mesh(this.geometry, this.material)
+		this.mesh.position.x += 3
 		this.app.scene.add(this.mesh)
 	}
 
@@ -47,7 +47,7 @@ export default class Box {
 
 		//update u_time value
 		this.material.uniforms.u_time.value = this.clock.getElapsedTime()
-		this.mesh.rotation.x += 0.001
-		this.mesh.rotation.y += 0.001
+		this.mesh.rotation.y += 0.02
+		this.mesh.rotation.x += 0.02
 	}
 }

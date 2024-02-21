@@ -16,7 +16,7 @@ export default class Renderer {
 	}
 
 	private setupRenderer(): void {
-		this.renderer.setClearColor('#2D2F30')
+		this.renderer.setClearColor('#191B1D')
 		this.renderer.setSize(this.app.sizes.width, this.app.sizes.height)
 		this.renderer.setPixelRatio(this.app.sizes.pixelRatio)
 	}
